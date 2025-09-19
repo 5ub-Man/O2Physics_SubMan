@@ -125,9 +125,9 @@ struct SginclusivePhiKstarSD {
   Configurable<int> generatedId{"generatedId", 31, ""};
 
   enum GapSideNum {
-    SideA,     // 0
-    SideC,     // 1
-    BothSides  // 2
+    SideA,    // 0
+    SideC,    // 1
+    BothSides // 2
   };
 
   int numTwoTracks = 2;
@@ -204,11 +204,11 @@ struct SginclusivePhiKstarSD {
     }
     // qa plots
     if (qa) {
-      //Occupancy
+      // Occupancy
       rQA.add("hOcc_before", "Occupancy distribution before event cuts", kTH1F, {{1000, 0, 15000}});
       rQA.add("hOcc_after", "Occupancy distribution after all event cuts", kTH1F, {{1000, 0, 15000}});
 
-      //DCA
+      // DCA
       rQA.add("hDcaxy_all_before", "DCAxy Distribution of all tracks before track selection; DCAxy (cm); Counts", kTH1F, {{400, -0.2, 0.2}});
       rQA.add("hDcaz_all_before", "DCAz Distribution of all tracks before track selection; DCAz (cm); Counts", kTH1F, {{400, -0.2, 0.2}});
 
@@ -221,12 +221,12 @@ struct SginclusivePhiKstarSD {
       rQA.add("hDcaxy_ka", "DCAxy Distribution of selected kaons; DCAxy (cm); Counts", kTH1F, {{400, -0.2, 0.2}});
       rQA.add("hDcaz_ka", "DCAz Distribution of selected kaons; DCAz (cm); Counts", kTH1F, {{400, -0.2, 0.2}});
 
-      //Vx, Vy, Vz
+      // Vx, Vy, Vz
       rQA.add("hVertexX", "Vertex X distribution; Vertex X (cm); Counts", kTH1F, {{400, -0.1, 0.1}});
       rQA.add("hVertexY", "Vertex Y distribution; Vertex Y (cm); Counts", kTH1F, {{200, -0.05, 0.05}});
       rQA.add("hVertexZ", "VertexZ distribution; Vertex Z (cm); Counts", kTH1F, {{600, -15.0, 15.0}});
 
-      //TPC, TOF PID
+      // TPC, TOF PID
       rQA.add("tpc_dedx", "p vs dE/dx of all particles; #it{p} (GeV/#it{c}); TPC dE/dx (a.u.)", kTH2F, {{500, 0.0, 10.0}, {5000, 0.0, 5000.0}});
       rQA.add("tpc_dedx_kaon", "p vs dE/dx of selected kaons; #it{p} (GeV/#it{c}); TPC dE/dx (a.u.)", kTH2F, {{500, 0.0, 10.0}, {5000, 0.0, 5000.0}});
       rQA.add("tpc_dedx_pion", "p vs dE/dx of selected pions; #it{p} (GeV/#it{c}); TPC dE/dx (a.u.)", kTH2F, {{500, 0.0, 10.0}, {5000, 0.0, 5000.0}});
@@ -247,16 +247,16 @@ struct SginclusivePhiKstarSD {
       rQA.add("tpc_tof_nsigma_kaon", "n#sigma TPC vs TOF; n#sigma_{TPC}^{K}; n#sigma_{TOF}^{K}", kTH2F, {{100, -10.0, 10.0}, {100, -10.0, 10.0}});
       rQA.add("tpc_tof_nsigma_pion", "n#sigma TPC vs TOF; n#sigma_{TPC}^{#pi}; n#sigma_{TOF}^{#pi}", kTH2F, {{100, -10.0, 10.0}, {100, -10.0, 10.0}});
 
-      //Rapidity, pseudorapisdity
+      // Rapidity, pseudorapisdity
       rQA.add("hEta_all_after", "Pseudorapidity of all tracks after track selection; #eta; Counts", kTH1F, {{400, -1.0, 1.0}});
 
       rQA.add("hEta_ka", "Pseudorapidity of selected Kaons; #eta; Counts", kTH1F, {{400, -1.0, 1.0}});
       rQA.add("hRap_ka", "Rapidity of selected Kaons; y; Counts", kTH1F, {{400, -1.0, 1.0}});
-      
+
       rQA.add("hEta_pi", "Pseudorapidity of selected Pions; #eta; Counts", kTH1F, {{400, -1.0, 1.0}});
       rQA.add("hRap_pi", "Rapidity of selected Pions; y; Counts", kTH1F, {{400, -1.0, 1.0}});
 
-      //Detector Signals
+      // Detector Signals
       rQA.add("FT0A_2", "T0A amplitude", kTH1F, {{500, 0.0, 500.0}});
       rQA.add("FT0A_0", "T0A amplitude", kTH1F, {{500, 0.0, 500.0}});
       rQA.add("FT0A_1", "T0A amplitude", kTH1F, {{20000, 0.0, 20000.0}});
@@ -455,13 +455,13 @@ struct SginclusivePhiKstarSD {
         registry.add("Reco/tr_tpcnclfind_2", "tpcnclfind", {HistType::kTH1F, {{300, 0.0, 300.0}}});
         registry.add("Reco/tr_itsChi2NCl_2", "itsChi2NCl", {HistType::kTH1F, {{200, 0.0, 200.0}}});
 
-        //QA plots
+        // QA plots
         if (qaMC) {
-          //Occupancy
+          // Occupancy
           rQA.add("hOcc_before_mc", "Occupancy distribution before event cuts", kTH1F, {{1000, 0, 15000}});
           rQA.add("hOcc_after_mc", "Occupancy distribution after all event cuts", kTH1F, {{1000, 0, 15000}});
 
-          //DCA
+          // DCA
           rQA.add("hDcaxy_all_before_mc", "DCAxy Distribution of all tracks before track selection; DCAxy (cm); Counts", kTH1F, {{400, -0.2, 0.2}});
           rQA.add("hDcaz_all_before_mc", "DCAz Distribution of all tracks before track selection; DCAz (cm); Counts", kTH1F, {{400, -0.2, 0.2}});
 
@@ -474,12 +474,12 @@ struct SginclusivePhiKstarSD {
           rQA.add("hDcaxy_ka_mc", "DCAxy Distribution of selected kaons; DCAxy (cm); Counts", kTH1F, {{400, -0.2, 0.2}});
           rQA.add("hDcaz_ka_mc", "DCAz Distribution of selected kaons; DCAz (cm); Counts", kTH1F, {{400, -0.2, 0.2}});
 
-          //Vx, Vy, Vz
+          // Vx, Vy, Vz
           rQA.add("hVertexX_mc", "Vertex X distribution; Vertex X (cm); Counts", kTH1F, {{400, -0.1, 0.1}});
           rQA.add("hVertexY_mc", "Vertex Y distribution; Vertex Y (cm); Counts", kTH1F, {{200, -0.05, 0.05}});
           rQA.add("hVertexZ_mc", "VertexZ distribution; Vertex Z (cm); Counts", kTH1F, {{600, -15.0, 15.0}});
 
-          //TPC, TOF PID
+          // TPC, TOF PID
           rQA.add("tpc_dedx_mc", "p vs dE/dx of all particles; #it{p} (GeV/#it{c}); TPC dE/dx (a.u.)", kTH2F, {{500, 0.0, 10.0}, {5000, 0.0, 5000.0}});
           rQA.add("tpc_dedx_kaon_mc", "p vs dE/dx of selected kaons; #it{p} (GeV/#it{c}); TPC dE/dx (a.u.)", kTH2F, {{500, 0.0, 10.0}, {5000, 0.0, 5000.0}});
           rQA.add("tpc_dedx_pion_mc", "p vs dE/dx of selected pions; #it{p} (GeV/#it{c}); TPC dE/dx (a.u.)", kTH2F, {{500, 0.0, 10.0}, {5000, 0.0, 5000.0}});
@@ -500,16 +500,16 @@ struct SginclusivePhiKstarSD {
           rQA.add("tpc_tof_nsigma_kaon_mc", "n#sigma TPC vs TOF; n#sigma_{TPC}^{K}; n#sigma_{TOF}^{K}", kTH2F, {{100, -10.0, 10.0}, {100, -10.0, 10.0}});
           rQA.add("tpc_tof_nsigma_pion_mc", "n#sigma TPC vs TOF; n#sigma_{TPC}^{#pi}; n#sigma_{TOF}^{#pi}", kTH2F, {{100, -10.0, 10.0}, {100, -10.0, 10.0}});
 
-          //Rapidity, pseudorapisdity
+          // Rapidity, pseudorapisdity
           rQA.add("hEta_all_after_mc", "Pseudorapidity of all tracks after track selection; #eta; Counts", kTH1F, {{400, -1.0, 1.0}});
 
           rQA.add("hEta_ka_mc", "Pseudorapidity of selected Kaons; #eta; Counts", kTH1F, {{400, -1.0, 1.0}});
           rQA.add("hRap_ka_mc", "Rapidity of selected Kaons; y; Counts", kTH1F, {{400, -1.0, 1.0}});
-          
+
           rQA.add("hEta_pi_mc", "Pseudorapidity of selected Pions; #eta; Counts", kTH1F, {{400, -1.0, 1.0}});
           rQA.add("hRap_pi_mc", "Rapidity of selected Pions; y; Counts", kTH1F, {{400, -1.0, 1.0}});
 
-          //Detector signals
+          // Detector signals
           rQA.add("FT0A_0_mc", "T0A amplitude", kTH1F, {{500, 0.0, 500.0}});
           rQA.add("FT0A_1_mc", "T0A amplitude", kTH1F, {{20000, 0.0, 20000.0}});
           rQA.add("FT0C_0_mc", "T0C amplitude", kTH1F, {{20000, 0.0, 20000.0}});
@@ -669,7 +669,8 @@ struct SginclusivePhiKstarSD {
   {
     registry.fill(HIST("hEventCutFlow"), 0);
 
-    if (qa) rQA.fill(HIST("hOcc_before"), collision.occupancyInTime());
+    if (qa)
+      rQA.fill(HIST("hOcc_before"), collision.occupancyInTime());
 
     ROOT::Math::PxPyPzMVector v0;
     ROOT::Math::PxPyPzMVector v1;
@@ -698,7 +699,7 @@ struct SginclusivePhiKstarSD {
 
     std::vector<ROOT::Math::PxPyPzMVector> onlyPionTracksn;
     std::vector<decltype(tracks.begin())> rawPionTracksn;
-    
+
     if (std::abs(collision.posZ()) > vzCut)
       return;
     registry.fill(HIST("hEventCutFlow"), 2);
@@ -738,7 +739,7 @@ struct SginclusivePhiKstarSD {
     if (useZvtxftovpv != -1 && collision.zVtxFT0vPV() != useZvtxftovpv)
       return;
     registry.fill(HIST("hEventCutFlow"), 11);
-    
+
     if (useVtxItsTpc != -1 && collision.vtxITSTPC() != useVtxItsTpc)
       return;
     registry.fill(HIST("hEventCutFlow"), 12);
@@ -765,7 +766,8 @@ struct SginclusivePhiKstarSD {
       return;
     registry.fill(HIST("hEventCutFlow"), 15);
 
-    if (qa) rQA.fill(HIST("hOcc_after"), collision.occupancyInTime());
+    if (qa)
+      rQA.fill(HIST("hOcc_after"), collision.occupancyInTime());
 
     int mult0 = 0;
     int mult1 = 0;
@@ -1590,8 +1592,9 @@ struct SginclusivePhiKstarSD {
       return;
     registry.fill(HIST("Reco/hEventCutFlowMC"), 1);
 
-    if (qaMC) rQA.fill(HIST("hOcc_before_mc"), collision.occupancyInTime());
-    
+    if (qaMC)
+      rQA.fill(HIST("hOcc_before_mc"), collision.occupancyInTime());
+
     auto mccoll = collision.udMcCollision();
     if (mccoll.generatorsID() != generatedId)
       return;
@@ -1607,7 +1610,7 @@ struct SginclusivePhiKstarSD {
     registry.fill(HIST("Reco/hEventCutFlowMC"), 3);
     //    Partition<TCs> pvContributors = aod::udtrack::isPVContributor == true;
     // pvContributors.bindTable(tracks);
-    
+
     if (std::abs(collision.posZ()) > vzCut)
       return;
     registry.fill(HIST("Reco/hEventCutFlowMC"), 4);
@@ -1627,7 +1630,7 @@ struct SginclusivePhiKstarSD {
     if (useTrofs != -1 && collision.trofs() != useTrofs)
       return;
     registry.fill(HIST("Reco/hEventCutFlowMC"), 8);
-    
+
     if (useHmpr != -1 && collision.hmpr() != useHmpr)
       return;
     registry.fill(HIST("Reco/hEventCutFlowMC"), 9);
@@ -1660,7 +1663,8 @@ struct SginclusivePhiKstarSD {
       return;
     registry.fill(HIST("Reco/hEventCutFlowMC"), 16);
 
-    if (qaMC) rQA.fill(HIST("hOcc_after_mc"), collision.occupancyInTime());
+    if (qaMC)
+      rQA.fill(HIST("hOcc_after_mc"), collision.occupancyInTime());
 
     // registry.get<TH1>(HIST("Reco/nPVContributors"))->Fill(pvContributors.size(), 1.);
     ROOT::Math::PxPyPzMVector vphi;
@@ -1674,7 +1678,7 @@ struct SginclusivePhiKstarSD {
     ROOT::Math::PxPyPzMVector vr01g;
     int t1 = 0;
     if (truegapSide == 0) {
-      if (qaMC){
+      if (qaMC) {
         rQA.fill(HIST("V0A_0_mc"), collision.totalFV0AmplitudeA());
         rQA.fill(HIST("FT0A_0_mc"), collision.totalFT0AmplitudeA());
         rQA.fill(HIST("FT0C_0_mc"), collision.totalFT0AmplitudeC());
@@ -1683,7 +1687,7 @@ struct SginclusivePhiKstarSD {
       }
     }
     if (truegapSide == 1) {
-      if (qaMC){
+      if (qaMC) {
         rQA.fill(HIST("V0A_1_mc"), collision.totalFV0AmplitudeA());
         rQA.fill(HIST("FT0A_1_mc"), collision.totalFT0AmplitudeA());
         rQA.fill(HIST("FT0C_1_mc"), collision.totalFT0AmplitudeC());
@@ -1696,7 +1700,7 @@ struct SginclusivePhiKstarSD {
         continue;
       auto mcPart1 = tr1.udMcParticle();
 
-      if (qaMC){
+      if (qaMC) {
         rQA.fill(HIST("hDcaxy_all_before_mc"), tr1.dcaXY());
         rQA.fill(HIST("hDcaz_all_before_mc"), tr1.dcaZ());
       }
@@ -1717,7 +1721,7 @@ struct SginclusivePhiKstarSD {
       registry.get<TH1>(HIST("Reco/tr_itsChi2NCl_2"))->Fill(tr1.itsChi2NCl(), 1.);
       v0.SetCoordinates(tr1.px(), tr1.py(), tr1.pz(), o2::constants::physics::MassPionCharged);
 
-      if (qaMC){
+      if (qaMC) {
         rQA.fill(HIST("hDcaxy_all_after_mc"), tr1.dcaXY());
         rQA.fill(HIST("hDcaz_all_after_mc"), tr1.dcaZ());
         rQA.fill(HIST("hEta_all_after_mc"), v0.Eta());
@@ -1730,7 +1734,7 @@ struct SginclusivePhiKstarSD {
         rQA.fill(HIST("tpc_nsigma_pion_all_mc"), v0.Pt(), tr1.tpcNSigmaPi());
       }
       if (selectionPIDKaon1(tr1)) {
-        if (qaMC){
+        if (qaMC) {
           rQA.fill(HIST("tpc_dedx_kaon_mc"), v0.P(), tr1.tpcSignal());
           rQA.fill(HIST("tof_beta_kaon_mc"), v0.P(), tr1.beta());
           rQA.fill(HIST("tpc_nsigma_kaon_mc"), v0.Pt(), tr1.tpcNSigmaKa());
@@ -1743,7 +1747,7 @@ struct SginclusivePhiKstarSD {
         }
       }
       if (selectionPIDPion1(tr1)) {
-        if (qaMC){
+        if (qaMC) {
           rQA.fill(HIST("tpc_dedx_pion_mc"), v0.P(), tr1.tpcSignal());
           rQA.fill(HIST("tof_beta_pion_mc"), v0.P(), tr1.beta());
           rQA.fill(HIST("tpc_nsigma_pion_mc"), v0.Pt(), tr1.tpcNSigmaPi());
@@ -1900,3 +1904,4 @@ WorkflowSpec defineDataProcessing(ConfigContext const& cfgc)
   return WorkflowSpec{
     adaptAnalysisTask<SginclusivePhiKstarSD>(cfgc)};
 }
+ 
